@@ -40,12 +40,6 @@ def one_hot_encoder(y_train, y_test):
 X_train, y_train = read_dataset('Digits_X_train.csv', 'Digits_y_train.csv')
 X_test, y_test = read_dataset('Digits_X_test.csv', 'Digits_y_test.csv')
 
-# train, test = read_dataset('fashion-mnist_train.csv', 'fashion-mnist_test.csv')
-# X_train = train[:,1:train.shape[0]:1]
-# y_train = train[:,0]
-# X_test = test[:,1:train.shape[0]:1]
-# y_test = test[:,0]
-
 X_train_norm, X_test_norm = normalize_features(X_train, X_test)
 
 X_train_norm = torch.tensor(X_train_norm, dtype=torch.float32)

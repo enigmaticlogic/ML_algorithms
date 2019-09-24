@@ -120,6 +120,3 @@ ypred = my_kNN.predict()
 
 print('Accuracy of our model ', accuracy(ypred, y_test.ravel()))
 
-#----------------------To add-------------------------
-
-# More metrics
