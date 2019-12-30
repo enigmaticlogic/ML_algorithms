@@ -1,5 +1,5 @@
 # Projects
-ML_models: Various ML algorithms coded crom scratch in Python.
+ML_models: Various ML algorithms coded from scratch in Python.
 
 FRI_projects: Code for reproduction of results from two research papers, with PDF's of the research papers included. These scripts are runnable as is, and the relavant data set CSV's are included.
 
