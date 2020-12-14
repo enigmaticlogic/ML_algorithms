@@ -5,7 +5,8 @@ from scipy import signal
 import matplotlib.pyplot as plt 
 from skimage.measure import block_reduce
 from random import shuffle
-%matplotlib inline 
+# Uncomment the line below if running as a jupyter notebook
+# %matplotlib inline 
 
 def read_dataset(feature_file, label_file):
     '''Read data set in *.csv to data frame in Pandas'''
