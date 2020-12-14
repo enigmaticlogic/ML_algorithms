@@ -5,7 +5,8 @@ import pandas as pd
 from scipy import stats
 from sklearn import datasets
 from collections import Counter
-
+# Uncomment the line below if running as a jupyter notebook
+# %matplotlib inline 
 
 #----------------------Read_Data-----------------------
 
