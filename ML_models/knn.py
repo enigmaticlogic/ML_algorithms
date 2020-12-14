@@ -5,7 +5,8 @@ import pandas as pd
 from collections import Counter
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
-%matplotlib inline 
+# Uncomment the line below if running as a jupyter notebook
+# %matplotlib inline 
 
 #----------------------Read Data------------------------
 
