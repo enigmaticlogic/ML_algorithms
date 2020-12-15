@@ -3,7 +3,7 @@
   <summary>Getting Started</summary>
   
   ## Intro
-  Hello! I have designed this readme to be a gentle introduction to running Python programs via the command line, as well as showcasing the power of various machine learning algorithms I have coded as part of my own edification. Please feel free to contact me at David.Patrick.Storey@gmail.com if you have any questions.
+  Hello! I have designed this readme to be a beginner friendly introduction to running Python programs via the command line, as well as showing off the power of various machine learning algorithms I have coded as part of my own edification. Please feel free to contact me at David.Patrick.Storey@gmail.com if you have any questions.
   ## Anaconda
   <a href="http://anaconda.com/">Anaconda</a> is a great tool to help you get started with Python! It will help you install Python, manage packages, and integrate with Jupyter Notebooks. 
   ## Required Libraries
