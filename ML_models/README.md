@@ -23,7 +23,7 @@ conda install -c pytorch pytorch
   
   After the program has finished running, the accuracy of the algorithm will be printed. For classification tasks, this is simply the number of correctly classified samples to     the total number of classified samples. For regression tasks, this is the root mean squared error.
   
-  ## Using different data sets
+  ## Using Different Data Sets and Parameters
   Feel free to use your own data sets! Just add them to the ML_models folder and add a couple lines of code to replace the lines below, which can be found easily by searching for "X_train, y_train =":
   
   ```
@@ -31,7 +31,26 @@ conda install -c pytorch pytorch
   X_test, y_test = read_dataset('Digits_X_test.csv', 'Digits_y_test.csv')
   ```
  
- X_train and X_test should be of the form (samples x features), while y_train and y_test should be of the form (labels x 1). 
+ X_train and X_test should be of the form (samples x features), while y_train and y_test should be of the form (labels x 1). Guides on how to change parameters and what they mean will be included for each algorithm.
   
 
+</details>
+
+<details>
+  <summary>Linear Regression</summary>
+  
+  ## Simple but Powerful!
+  Linear regression predicts the label for a piece of data as a linear combination of its feature values. The bread and butter of these types of algorithms revolves around using calculus to minimize the value of a loss function which, when evaluated for all predicted values, provides some notion of total error. My implementation includes a variation known as ridge regression as well.
+  
+  ## Required Libraries
+  The following Python libraries are required for this program: Numpy and Pandas.
+  
+  ## Parameters 
+  
+  Parameters can be adjusted in the line below:
+  
+  ```
+  my_Lin_Reg = Lin_Reg(X_train_norm, y_train, c, lr=0.01, mode='Ridge', reg=0.5) # Adjust parameters here
+  ```
+  
 </details>
