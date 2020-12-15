@@ -40,7 +40,7 @@ conda install -c pytorch pytorch
   <summary>Linear Regression</summary>
   
   ## Simple but Powerful!
-  Linear regression predicts the label for a piece of data as a linear combination of its feature values. The bread and butter of these types of algorithms revolves around using calculus to minimize the value of a loss function which, when evaluated for all predicted values, provides some notion of total error. My implementation includes a variation known as ridge regression as well.
+  Linear regression predicts the label for a piece of data as a linear combination of its feature values. The bread and butter of these types of algorithms revolve around using calculus to minimize the value of a loss function which, when evaluated for all predicted values, provides some notion of total error. My implementation includes a variation known as ridge regression as well.
   
   ## Required Libraries
   The following Python libraries are required for this program: Numpy and Pandas.
