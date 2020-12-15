@@ -24,7 +24,7 @@ conda install -c pytorch pytorch
   After the program has finished running, the accuracy of the algorithm will be printed. For classification tasks, this is simply the number of correctly classified samples to     the total number of classified samples. For regression tasks, this is the root mean squared error.
   
   ## Using different data sets
-  Feel free to use your own data sets! Just add them to the ML_models folder and add a couple lines of code to replace the code below:
+  Feel free to use your own data sets! Just add them to the ML_models folder and add a couple lines of code to replace the lines below, which can be found easily by searching for "X_train, y_train =":
   
   ```
   X_train, y_train = read_dataset('Digits_X_train.csv', 'Digits_y_train.csv')
