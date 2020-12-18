@@ -15,7 +15,7 @@ conda install -c pytorch pytorch
 ```
 
   ## How to Use 
-  Once you have python and the proper libraries installed, simply download the ML_models folder, navigate to it via the command line, and use the following command, filling in the name of the program you wish to run:
+  Once you have python and the proper libraries installed, simply download the ML_models folder, navigate to it via the command line, and use the following command (filling in the name of the program you wish to run):
   
   ```
   python <program_file_name>
@@ -40,17 +40,43 @@ conda install -c pytorch pytorch
   <summary>Linear Regression</summary>
   
   ## Simple but Powerful!
-  Linear regression predicts the label for a piece of data as a linear combination of its feature values. The bread and butter of these types of algorithms revolve around using calculus to minimize the value of a loss function which, when evaluated for all predicted values, provides some notion of total error. My implementation includes a variation known as ridge regression as well.
+  Linear regression predicts the label for a piece of data as a linear combination of its feature values. This is not a classification task but rather attempts to predict real number values, and thus I use the root mean squared error to measure accuracy. The pearson correlation coefficient is another popular accuracy metric. The bread and butter of these types of algorithms revolve around using calculus to minimize the value of a loss function which, when evaluated for all predicted values, provides some notion of total error. My implementation includes a variation known as ridge regression as well.
   
   ## Required Libraries
   The following Python libraries are required for this program: Numpy and Pandas.
   
   ## Parameters 
+  lr: Learning rate, a number specifying how much to update the loss function at each gradient descent step.
+  mode: Choose between ordinary linear regression ('OLR') and ridge regression ('Ridge').
+  reg: Regularization constant, a number specifying how heavily to weight the regularization term (only needed for the ridge regression mode).
   
-  Parameters can be adjusted in the line below:
+  
+  Parameters can be adjusted in the line below. Feel free to experiment!
   
   ```
   my_Lin_Reg = Lin_Reg(X_train_norm, y_train, c, lr=0.01, mode='Ridge', reg=0.5) # Adjust parameters here
+  ```
+  
+</details>
+
+<details>
+  <summary>Logistic Regression</summary>
+  
+  ## It's Classification Time!
+  Logistic regression is used for classification tasks. Rather than predict the value of a sample, it uses the logistic function to predict the probability that a sample is in one of two categories. But what if we want more than two possible labels? Don't worry, there are a several ways that this problem can be solved! This is what is known as a multiclass classification problem, and the strategy we elect to use is called the one vs. all method. Essentially, we calculate the probability that the sample should have each label seperately, and then we choose the label with the highest probability as our prediction. Another problem is the non numerical nature of categorical data. How are we supposed to use a function to predict a non numerical value? Thankfully, we have a solution to this problem as well. We use a technique called one hot encoding to transform our labels into vectors. For example, if we had three labels, we could view them as the vectors [1,0,0], [0,1,0], and [0,0,1].
+  
+  ## Required Libraries
+  The following Python libraries are required for this program: Numpy and Pandas.
+  
+  ## Parameters 
+  lr: Learning rate, a number specifying how much to update the loss function at each gradient descent step.
+  reg: Regularization constant, a number specifying how heavily to weight the regularization term.
+  
+  
+  Parameters can be adjusted in the line below. Feel free to experiment!
+  
+  ```
+  my_Log_Reg = Log_Reg(X_train_norm, y_train_ohe, c, lr=0.01, reg=0.5)
   ```
   
 </details>
