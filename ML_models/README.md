@@ -39,7 +39,7 @@ conda install -c pytorch pytorch
 <details>
   <summary>Linear Regression</summary>
   
-  ## Simple but Powerful!
+  ## Where it all Began...
   Linear regression predicts the label for a piece of data as a linear combination of its feature values. This is not a classification task but rather attempts to predict real number values, and thus I use the root mean squared error to measure accuracy. The pearson correlation coefficient is another popular accuracy metric. The bread and butter of these types of algorithms revolve around using calculus to minimize the value of a loss function which, when evaluated for all predicted values, provides some notion of total error. My implementation includes a variation known as ridge regression as well.
   
   ## Required Libraries
@@ -77,6 +77,33 @@ conda install -c pytorch pytorch
   
   ```
   my_Log_Reg = Log_Reg(X_train_norm, y_train_ohe, c, lr=0.01, reg=0.5)
+  ```
+  
+</details>
+
+<details>
+  <summary>K Nearest Neighbors</summary>
+  
+  ## Simple but Powerful!
+  K nearest neighbors (or knn for short) is perhaps the easiest of these algorithms to understand, but can nonetheless be a very powerful classification tool. To begin, a notion of distance between data samples is defined (often just Euclidean or "physical" distance). Then, to classify a sample you pick a number (this is the k value) and find the k samples in the test set closest to it under the notion of distance chosen to the sample you want to classify. The predicted value is simply whatever the most common label in this subset is, and if there is a tie you choose randomly! Knn also has the added bonus of being easy to train, since the only adjustable parameter is the k value. Notice that this program uses the IRIS dataset which can be retrieved directly in the script using sklearn!
+  
+  ```
+  iris_dataset = load_iris()
+  X_train, X_test, y_train, y_test = train_test_split(iris_dataset['data'], iris_dataset['target'], random_state = 0)
+  ```
+  
+  ## Required Libraries
+  The following Python libraries are required for this program: Numpy, Pandas, Collections, and Sklearn.
+  
+  ## Parameters 
+  k: The number of neighbors considered, an integer. 
+  mode: The distance function used, either euclidean ('eucl') or manhattan ('manhattan').
+  
+  
+  Parameters can be adjusted in the line below. Feel free to experiment!
+  
+  ```
+  my_kNN = kNN(X_train_norm, y_train, X_test_norm, k=3, mode='manhattan')
   ```
   
 </details>
