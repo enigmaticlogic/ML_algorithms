@@ -111,7 +111,7 @@ conda install -c pytorch pytorch
 <details>
   <summary>Decision Tree</summary>
   
-  ## Decisions, decisions, decisions...
+  ## Decisions, Decisions, Decisions...
   Note: Decision trees can also be used for regression (which my code includes an option for), but I only explain how they are used for classification here. 
   
   The way a decision tree classifies a sample is essentially a flowchart. The tree is comprised of many nodes, and the sample is passed from one node to the next until it reaches a so called leaf node, or some other condition is met (more on that in a bit). At each node, a series of conditions determine the next node the sample is passed to. These conditions could be anything, and are easiest to think about in the form of questions. For example, a node might ask "What color is the sample?" and branch out to 3 nodes representing red, blue, and green. For numerical feature values, these conditions are often just inequalities. In my program, each node is either a leaf node or splits into two other nodes. A leaf node simply classifies an sample that reaches it, so it does not branch into any more nodes. One strength of decision trees is the ability to follow a sample down the tree and see the exact process by which it was classified!
