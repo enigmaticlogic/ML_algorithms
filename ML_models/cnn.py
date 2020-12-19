@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import scipy as sp
 from scipy import signal
-import matplotlib.pyplot as plt 
+# import matplotlib.pyplot as plt 
 from skimage.measure import block_reduce
 from random import shuffle
 # Uncomment the line below if running as a jupyter notebook
