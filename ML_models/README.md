@@ -217,7 +217,7 @@ conda install -c pytorch pytorch
   ```
   my_NN = conv_NN(X_train_norm, y_train_ohe, hidden_nn_1=100, hidden_nn_2=100, conv_h=3, conv_w=3,\
                 pool_h=2, pool_w=2, num_filters=16, lr=0.1, reg=.000001)
-                
+  . . .             
   for epoch in range(3000):
     my_NN.convolution_minibatch_fit(20)
   ```
