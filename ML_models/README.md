@@ -184,7 +184,38 @@ conda install -c pytorch pytorch
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
   ```
-  myNN = whole_network(2, [100, 100], 2500, X_train_norm, y_train_ohe, reg=0.1, lr=0.01)
+  myNN = whole_network(X_train_norm, y_train_ohe, num_hidden_layers=2, num_hidden_neurons=[100, 100], epoch_num=2500, reg=0.1, lr=0.01)
+  ```
+  
+</details>
+
+<details>
+  <summary>Convolutional Neural Network</summary>
+  
+  ## Pcitures Please!
+  The convolutional neural network is a variation of the neural network which has shown a lot of success in image recognition problems. It has a similar structure of layers which an image is passed through, but in this case the output is often used as the input for an artificial network which makes the final prediction. Instead of hidden layers, there are alternating convolution layers and pooling layers. The convolution layers involve passing small filters (e.g. 3x3) over the input of the layer (the image, or in later layers a distorted version of it). As the filter is passed over the image, each patch is convolved with the filter, and the sum of these convolutions is taken and an activation fucntion is applied. Since there are multiple filters, we end up with multiple image outputs. The values of these filters are learned in the training process, and by looking at the output images of the first layer, one can see that the learned filters often perform specific functions such as blurring, embossing, and edge detection. The pooling layers downsample the outputs of the convolutional layers to further reduce the resolution and dimension of the image. This serves to reduce the number of parameters in the network, as well as reduce overfitting. After the image is fed through the convolution and max pooling layers, it is flattened into a vector and fed into an artifical neural network.
+  
+  ## Required Libraries
+  The following Python libraries are required for this program: Numpy, Pandas, Scipy, Skimage, and Random.
+  
+  ## Hyperparameters 
+  NOTE: My implementation is not well optimized, so it can take a while to run.
+  hidden_nn_1 = The number of neurons in first layer of the ANN, an integer.
+  hidden_nn_2 = The number of neurons in the second layer of the ANN, an integer.
+  conv_h = The height of the convolution filters, an integer.
+  conv_w = The width of the convolution filters, an integer.
+  pool_h = The height of the pooling filter, an integer.
+  pool_w = The width of the pooling filter, an integer.
+  num_filters = The number of convolution filters to be applied in the convolution layer, an integer.
+  lr = The learning rate, a number.
+  reg = The regularization constant, an integer.
+  
+  
+  Hyperparameters can be adjusted in the line below. Feel free to experiment!
+  
+  ```
+  my_NN = conv_NN(X_train_norm, y_train_ohe, hidden_nn_1=100, hidden_nn_2=100, conv_h=3, conv_w=3,\
+                pool_h=2, pool_w=2, num_filters=16, lr=0.1, reg=.000001)
   ```
   
 </details>
