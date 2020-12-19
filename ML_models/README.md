@@ -42,7 +42,10 @@ conda install -c pytorch pytorch
  **Loss Function:** The loss function is used to determine the global error of our model. Typically, it is a function of the weights in our model and involves the predictions made on the training data. The goal is to minimize this function for the training data, which in turn gives a stronger prediction function.  
  **Gradient Descent:** This is a technique to minimize differentiable functions. The idea is to start with random or fixed inputs (the weights) and take the negative gradient of the loss function, which will give the direction of steepest decrease in the weight space. Then, we update the weights by moving a tiny bit in that direction, hopefully closer to a minimum. This process is repeated many times. Convex loss functions are desired to prevent becoming "stuck" in local minima, but there are more advanced methods such as stochastic gradient descent to combat this.  
  **Epoch:** An epoch is one iteration of optimization.  
+ **Learning Rate:** The learning rate determines how far to "step" in the direction of the gradient in each epoch of gradient descent. If the learning rate is too large, there is a risk of overshooting the minimum, and if it is too low you may need many epochs (more runtime) to reach the minimum.
  **Training:** Machine learning models must be "trained" on sample data. All of the models here perform what is called supervised learning, meaning that we have access to data with known labels. This known data is fed into our model and used to tune it, often by optimizing a loss function.  
+ **Overfitting:** It is possible that when training a model, it will become too restricted to the training data and will not be able to predict new samples with even slight variations to the training smaples. Essentially, the model will be excellent at predicting the training data but will perform poorly on new data. This phenomena is known as overfitting.
+ **Regularization:** This is a technique used to reduce overfitting. It usually involves adding a term called a regularization term to the loss function which reduces the complexity of the predictor in some way, often by penalizing the total value of the weights. 
   
 </details>
 
@@ -56,9 +59,9 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy and Pandas.
   
   ## Hyperparameters 
-  lr: Learning rate, a number specifying how much to update the loss function at each gradient descent step.  
-  mode: Choose between ordinary linear regression ('OLR') and ridge regression ('Ridge').  
-  reg: Regularization constant, a number specifying how heavily to weight the regularization term (only needed for the ridge regression mode).  
+  **lr:** Learning rate, a number specifying how much to update the loss function at each gradient descent step.  
+  **mode:** Choose between ordinary linear regression ('OLR') and ridge regression ('Ridge').  
+  **reg:** Regularization constant, a number specifying how heavily to weight the regularization term (only needed for the ridge regression mode).  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -78,8 +81,8 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy and Pandas.
   
   ## Hyperparameters 
-  lr: Learning rate, a number specifying how much to update the loss function at each gradient descent step.  
-  reg: Regularization constant, a number specifying how heavily to weight the regularization term.  
+  **lr:** Learning rate, a number specifying how much to update the loss function at each gradient descent step.  
+  **reg:** Regularization constant, a number specifying how heavily to weight the regularization term.  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -104,8 +107,8 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy, Pandas, Collections, and Sklearn.
   
   ## Hyperparameters 
-  k: The number of neighbors considered, an integer.  
-  mode: The distance function used, either euclidean ('eucl') or manhattan ('manhattan').  
+  **k:** The number of neighbors considered, an integer.  
+  **mode:** The distance function used, either euclidean ('eucl') or manhattan ('manhattan').  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -129,9 +132,9 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy, Pandas, Scipy, and Sklearn.
   
   ## Hyperparameters 
-  max_depth: The maximum number of layers the tree can have, an integer.  
-  min_samples: The minimum number of training samples in a node for it to be considered for splitting, an integer.  
-  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.  
+  **max_depth:** The maximum number of layers the tree can have, an integer.  
+  **min_samples:** The minimum number of training samples in a node for it to be considered for splitting, an integer.  
+  **mode:** Set to 'classifier' for classification tasks and 'regressor' for regression tasks.  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -153,10 +156,10 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy, Pandas, Scipy, Collections, and Sklearn.
   
   ## Hyperparameters 
-  num_trees: The number of trees generated, an integer.  
-  num_samples: The number of samples used to construct each individual tree, an integer.  
-  max_depth: The maximum number of layers each tree can have, an integer.  
-  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.  
+  **num_trees:** The number of trees generated, an integer.  
+  **num_samples:** The number of samples used to construct each individual tree, an integer.  
+  **max_depth:** The maximum number of layers each tree can have, an integer.  
+  **mode:** Set to 'classifier' for classification tasks and 'regressor' for regression tasks.  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -178,12 +181,12 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy, Pandas, and Pytorch (used for the ability to run off of GPU).
   
   ## Hyperparameters 
-  num_hidden_layers: The number of hidden layers in the network, an integer.  
-  num_hidden_neurons: The number of neurons in each layer, a list of length num_hidden_layers (e.g. [100,150] would set the first hiden layer to have 100 neurons, and the second to have 150 neurons).  
-  epoch_num: The number of times to run backpropagation, an integer.  
-  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.  
-  reg: The regularization constant, a number.  
-  lr: The learning rate, a number.  
+  **num_hidden_layers:** The number of hidden layers in the network, an integer.  
+  **num_hidden_neurons:** The number of neurons in each layer, a list of length num_hidden_layers (e.g. [100,150] would set the first hiden layer to have 100 neurons, and the second to have 150 neurons).  
+  **epoch_num:** The number of times to run backpropagation, an integer.  
+  **mode:** Set to 'classifier' for classification tasks and 'regressor' for regression tasks.  
+  **reg:** The regularization constant, a number.  
+  **lr:** The learning rate, a number.  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -205,15 +208,15 @@ conda install -c pytorch pytorch
   ## Hyperparameters 
   NOTE: My implementation is not well optimized, so it can take a while to run.
 
-  hidden_nn_1 = The number of neurons in first layer of the ANN, an integer.  
-  hidden_nn_2 = The number of neurons in the second layer of the ANN, an integer.  
-  conv_h = The height of the convolution filters, an integer.  
-  conv_w = The width of the convolution filters, an integer.  
-  pool_h = The height of the pooling filter, an integer.  
-  pool_w = The width of the pooling filter, an integer.  
-  num_filters = The number of convolution filters to be applied in the convolution layer, an integer.  
-  lr = The learning rate, a number.  
-  reg = The regularization constant, an integer.  
+  **hidden_nn_1:** The number of neurons in first layer of the ANN, an integer.  
+  **hidden_nn_2:** The number of neurons in the second layer of the ANN, an integer.  
+  **conv_h:** The height of the convolution filters, an integer.  
+  **conv_w:** The width of the convolution filters, an integer.  
+  **pool_h:** The height of the pooling filter, an integer.  
+  **pool_w:** The width of the pooling filter, an integer.  
+  **num_filters:** The number of convolution filters to be applied in the convolution layer, an integer.  
+  **lr:** The learning rate, a number.  
+  **reg:** The regularization constant, an integer.  
   
   For the second two lines, you can choose how many epochs to run as well as how many samples to use for the mini batch gradient descent.
   
