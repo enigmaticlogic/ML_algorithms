@@ -36,13 +36,13 @@ conda install -c pytorch pytorch
  ## Common Terms
  In this section I will include some common terms used throughout the documentation.
  
- Sample: This refers to a single piece of data in the training or test set.  
- Label: This is what we are trying to predict. For example in the digits/MNIST dataset, the sample is an image of a hand drawn digit, and the label is the value of that digit.  
- Predictor: The predictor is a function of the feature values of a sample which outputs a prediction for what the label of that sample should be.  
- Loss Function: The loss function is used to determine the global error of our model. Typically, it is a function of the weights in our model and involves the predictions made on the training data. The goal is to minimize this function for the training data, which in turn gives a stronger prediction function.  
- Gradient Descent: This is a technique to minimize differentiable functions. The idea is to start with random or fixed inputs (the weights) and take the negative gradient of the loss function, which will give the direction of steepest decrease in the weight space. Then, we update the weights by moving a tiny bit in that direction, hopefully closer to a minimum. This process is repeated many times. Convex loss functions are desired to prevent becoming "stuck" in local minima, but there are more advanced methods such as stochastic gradient descent to combat this.  
- Epoch: An epoch is one iteration of optimization.  
- Training: Machine learning models must be "trained" on sample data. All of the models here perform what is called supervised learning, meaning that we have access to data with known labels. This known data is fed into our model and used to tune it, often by optimizing a loss function.  
+ **Sample:** This refers to a single piece of data in the training or test set.  
+ **Label:** This is what we are trying to predict. For example in the digits/MNIST dataset, the sample is an image of a hand drawn digit, and the label is the value of that digit.  
+ **Predictor:** The predictor is a function of the feature values of a sample which outputs a prediction for what the label of that sample should be.  
+ **Loss Function:** The loss function is used to determine the global error of our model. Typically, it is a function of the weights in our model and involves the predictions made on the training data. The goal is to minimize this function for the training data, which in turn gives a stronger prediction function.  
+ **Gradient Descent:** This is a technique to minimize differentiable functions. The idea is to start with random or fixed inputs (the weights) and take the negative gradient of the loss function, which will give the direction of steepest decrease in the weight space. Then, we update the weights by moving a tiny bit in that direction, hopefully closer to a minimum. This process is repeated many times. Convex loss functions are desired to prevent becoming "stuck" in local minima, but there are more advanced methods such as stochastic gradient descent to combat this.  
+ **Epoch:** An epoch is one iteration of optimization.  
+ **Training:** Machine learning models must be "trained" on sample data. All of the models here perform what is called supervised learning, meaning that we have access to data with known labels. This known data is fed into our model and used to tune it, often by optimizing a loss function.  
   
 </details>
 
