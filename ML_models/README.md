@@ -114,15 +114,15 @@ conda install -c pytorch pytorch
   ## Decisions, Decisions, Decisions...
   Note: Decision trees can also be used for regression (which my code includes an option for), but I only explain how they are used for classification here. 
   
-  The way a decision tree classifies a sample is essentially a flowchart. The tree is comprised of many nodes, and the sample is passed from one node to the next until it reaches a so called leaf node, or some other condition is met (more on that in a bit). At each node, a series of conditions determine the next node the sample is passed to. These conditions could be anything, and are easiest to think about in the form of questions. For example, a node might ask "What color is the sample?" and branch out to 3 nodes representing red, blue, and green. For numerical feature values, these conditions are often just inequalities. In my program, each node is either a leaf node or splits into two other nodes. A leaf node simply classifies an sample that reaches it, so it does not branch into any more nodes. One strength of decision trees is the ability to follow a sample down the tree and see the exact process by which it was classified!
+  The way a decision tree classifies a sample is essentially a flowchart. The tree is comprised of many nodes, and the sample is passed from one node to the next until it reaches a so called leaf node. At each node, a series of conditions determine the next node the sample is passed to. These conditions could be anything, and are easiest to think about in the form of questions. For example, a node might ask "What color is the sample?" and branch out to 3 nodes representing red, blue, and green. One strength of decision trees is the ability to follow a sample down the tree and see the exact process by which it was classified! For numerical feature values, these conditions are often just inequalities. In my program, each node is either a leaf node or splits into two other nodes. A leaf node simply classifies a sample that reaches it, so it does not split into any more nodes. 
   
-  But how does one choose when to stop splitting and designate a node as a leaf node, which conditions to use to split nodes, and how many times to branch nodes? To determine when a node should stop splitting and become a leaf node, we use something called the purity of the node. Essentially, we run our training data through the tree and if a large portion of the data at a node has the same label, that node is considered to be more pure than if there is an even mix. If a node ends up with all samples with the same label, that node is pure. There are several ways to measure purity, but we use the most common which is called the GINI score. If a node is completely pure, we designate it as a leaf node, and otherwise we split the node. The effectiveness of splitting conditions of a node are measured by something called GAIN, which is a function of the GINI score of the parent node and that of the nodes it splits to. Since there are a finite number of features, we can test every possible splitting condition for a single feature to find the best split for that feature, and repeat this process to find the best splitting condition across all features. It is by this process that the tree is generated, but the user still msut decide how many times to branch (called the max depth), and typically will assign a minimum number of samples in a node to consider splitting it (for example, it doesn't make sense to split a node with only one sample in it). If there is a tie for training samples classified in one of these nodes, the label designated by the node is chosen arbitrarily. These are hyper parameters that must be tuned by the user. 
+  But how does one choose when to stop splitting and designate a node as a leaf node, which conditions to use to split nodes, and how many times to branch nodes? To determine when a node should stop splitting and become a leaf node, we use something called the purity of the node. Essentially, we run our training data through the tree and if a large portion of the data at a node has the same label, that node is considered to be more pure than if there is an even mix. If a node ends up with all samples with the same label, that node is pure. There are several ways to measure purity, but we use the most common which is called the GINI score. If a node is completely pure, we designate it as a leaf node. The effectiveness of splitting conditions of a node are measured by something called GAIN, which is a function of the GINI score of the parent node and that of the nodes it splits to. Since there are a finite number of features, we can test every possible splitting condition for a single feature to find the best split for that feature, and repeat this process to find the best splitting condition across all features. It is by this process that the tree is generated, but the user still must decide how many times to branch (called the max depth), and typically will assign a minimum number of samples in a node to consider splitting it (for example, it doesn't make sense to split a node with only one sample in it). Due to these practicies, not all leaf nodes will be completely pure. If there is a tie for training samples classified in one of these nodes, the label designated by the node is chosen arbitrarily. The maximum depth and minimum split are hyper parameters that must be tuned by the user. Decision trees are often "pruned" by removing some nodes from the tree, but I will not cover pruning techniques here.
   
   ## Required Libraries
-  The following Python libraries are required for this program: Numpy, Pandas, Collections, and Sklearn.
+  The following Python libraries are required for this program: Numpy, Pandas, Scipy, and Sklearn.
   
   ## Hyperparameters 
-  max_depth: The maximum number of layers the tree can have (one more than the number of times a layer of nodes can split), an integer. 
+  max_depth: The maximum number of layers the tree can have, an integer. 
   min_samples: The minimum number of training samples in a node for it to be considered for splitting, an integer.
   mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.
   
@@ -131,6 +131,32 @@ conda install -c pytorch pytorch
   
   ```
   myTree = DecisionTree(max_depth=11, min_samples_split=1, mode='classifier')
+  ```
+  
+</details>
+
+<details>
+  <summary>Random Forest</summary>
+  
+  ## See the Forest for the Trees
+  The random forest is an ensemble method built on the decision tree to reduce overfitting. It is a very powerful method used for both classification and regression that typically provides high accruacy while also being easier to tune than neural networks, so it is a great place for beginners to start digging in to model training. For this method, a large number of decision trees are built and a prediction is made by choosing the label predicted by the majority of these trees. 
+  
+  To build each of these trees, a number of samples are selected randomly from the sample set to run through the tree, and at each node a random subset of features are chosen to determine the splitting condition. Trees are typically much smaller in a random forest and are not pruned. 
+
+  ## Required Libraries
+  The following Python libraries are required for this program: Numpy, Pandas, Scipy, Collections, and Sklearn.
+  
+  ## Hyperparameters 
+  num_trees: The number of trees generated, an integer.
+  num_samples: The number of samples used to construct each individual tree, an integer.
+  max_depth: The maximum number of layers each tree can have, an integer. 
+  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.
+  
+  
+  Hyperparameters can be adjusted in the line below. Feel free to experiment!
+  
+  ```
+  myForest = Random_Forest(X_train_norm, y_train, num_trees=1000, num_samples=100, max_depth=6, mode='classifier')
   ```
   
 </details>
