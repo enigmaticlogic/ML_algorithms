@@ -200,14 +200,23 @@ conda install -c pytorch pytorch
   
   ## Hyperparameters 
   NOTE: My implementation is not well optimized, so it can take a while to run.
+  
   hidden_nn_1 = The number of neurons in first layer of the ANN, an integer.
+  
   hidden_nn_2 = The number of neurons in the second layer of the ANN, an integer.
+  
   conv_h = The height of the convolution filters, an integer.
+  
   conv_w = The width of the convolution filters, an integer.
+  
   pool_h = The height of the pooling filter, an integer.
+  
   pool_w = The width of the pooling filter, an integer.
+  
   num_filters = The number of convolution filters to be applied in the convolution layer, an integer.
+  
   lr = The learning rate, a number.
+  
   reg = The regularization constant, an integer.
   
   For the second two lines, you can choose how many epochs to run as well as how many samples to use for the mini batch gradient descent.
