@@ -46,10 +46,9 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy and Pandas.
   
   ## Hyperparameters 
-  lr: Learning rate, a number specifying how much to update the loss function at each gradient descent step.
-  mode: Choose between ordinary linear regression ('OLR') and ridge regression ('Ridge').
-  reg: Regularization constant, a number specifying how heavily to weight the regularization term (only needed for the ridge regression mode).
-  
+  lr: Learning rate, a number specifying how much to update the loss function at each gradient descent step.  
+  mode: Choose between ordinary linear regression ('OLR') and ridge regression ('Ridge').  
+  reg: Regularization constant, a number specifying how heavily to weight the regularization term (only needed for the ridge regression mode).  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -69,9 +68,8 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy and Pandas.
   
   ## Hyperparameters 
-  lr: Learning rate, a number specifying how much to update the loss function at each gradient descent step.
-  reg: Regularization constant, a number specifying how heavily to weight the regularization term.
-  
+  lr: Learning rate, a number specifying how much to update the loss function at each gradient descent step.  
+  reg: Regularization constant, a number specifying how heavily to weight the regularization term.  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -96,9 +94,8 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy, Pandas, Collections, and Sklearn.
   
   ## Hyperparameters 
-  k: The number of neighbors considered, an integer. 
-  mode: The distance function used, either euclidean ('eucl') or manhattan ('manhattan').
-  
+  k: The number of neighbors considered, an integer.  
+  mode: The distance function used, either euclidean ('eucl') or manhattan ('manhattan').  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -122,10 +119,9 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy, Pandas, Scipy, and Sklearn.
   
   ## Hyperparameters 
-  max_depth: The maximum number of layers the tree can have, an integer. 
-  min_samples: The minimum number of training samples in a node for it to be considered for splitting, an integer.
-  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.
-  
+  max_depth: The maximum number of layers the tree can have, an integer.  
+  min_samples: The minimum number of training samples in a node for it to be considered for splitting, an integer.  
+  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -147,11 +143,10 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy, Pandas, Scipy, Collections, and Sklearn.
   
   ## Hyperparameters 
-  num_trees: The number of trees generated, an integer.
-  num_samples: The number of samples used to construct each individual tree, an integer.
-  max_depth: The maximum number of layers each tree can have, an integer. 
-  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.
-  
+  num_trees: The number of trees generated, an integer.  
+  num_samples: The number of samples used to construct each individual tree, an integer.  
+  max_depth: The maximum number of layers each tree can have, an integer.  
+  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
@@ -173,13 +168,12 @@ conda install -c pytorch pytorch
   The following Python libraries are required for this program: Numpy, Pandas, and Pytorch (used for the ability to run off of GPU).
   
   ## Hyperparameters 
-  num_hidden_layers: The number of hidden layers in the network, an integer.
-  num_hidden_neurons: The number of neurons in each layer, a list of length num_hidden_layers (e.g. [100,150] would set the first hiden layer to have 100 neurons, and the second to have 150 neurons).
-  epoch_num: The number of times to run backpropagation, an integer. 
-  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.
-  reg: The regularization constant, a number.
-  lr: The learning rate, a number.
-  
+  num_hidden_layers: The number of hidden layers in the network, an integer.  
+  num_hidden_neurons: The number of neurons in each layer, a list of length num_hidden_layers (e.g. [100,150] would set the first hiden layer to have 100 neurons, and the second to have 150 neurons).  
+  epoch_num: The number of times to run backpropagation, an integer.  
+  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.  
+  reg: The regularization constant, a number.  
+  lr: The learning rate, a number.  
   
   Hyperparameters can be adjusted in the line below. Feel free to experiment!
   
