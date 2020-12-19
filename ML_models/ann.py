@@ -108,7 +108,7 @@ class output_layer(layers):
         self.db = torch.sum(self.err, dim=0, keepdim=True)
     
 class whole_network:
-    def __init__(self, num_hidden_layers, num_hidden_neurons, epoch_num, X, y, reg=.1, lr=.01):
+    def __init__(self, X, y, num_hidden_layers=2, num_hidden_neurons=[100, 100], epoch_num=2500, reg=.1, lr=.01):
         self.num_hidden_layers = num_hidden_layers
         self.num_hidden_neurons = num_hidden_neurons
         self.epoch_num = epoch_num
@@ -205,7 +205,7 @@ def accuracy(ypred, yexact):
     summed = torch.sum(p)
     return float(torch.sum(p))/float(len(yexact))
 
-myNN = whole_network(2, [100, 100], 2500, X_train_norm, y_train_ohe, reg=0.1, lr=0.01)
+myNN = whole_network(X_train_norm, y_train_ohe, num_hidden_layers=2, num_hidden_neurons=[100, 100], epoch_num=2500, reg=0.1, lr=0.01)
 myNN.fit()
 y_hat_test = myNN.prediction(X_test_norm)
 y_pred = predict(X_test_norm, y_hat_test)
