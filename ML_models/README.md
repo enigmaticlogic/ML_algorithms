@@ -139,7 +139,7 @@ conda install -c pytorch pytorch
   <summary>Random Forest</summary>
   
   ## See the Forest for the Trees
-  The random forest is an ensemble method built on the decision tree to reduce overfitting. It is a very powerful method used for both classification and regression that typically provides high accruacy while also being easier to tune than neural networks, so it is a great place for beginners to start digging in to model training. For this method, a large number of decision trees are built and a prediction is made by choosing the label predicted by the majority of these trees. 
+  The random forest is an ensemble method built on the decision tree to reduce overfitting. It is a very powerful method used for both classification and regression that typically provides high accuracy while also being easier to tune than neural networks, so it is a great place for beginners to start digging in to model training. For this method, a large number of decision trees are built and a prediction is made by choosing the label predicted by the majority of these trees. 
   
   To build each of these trees, a number of samples are selected randomly from the sample set to run through the tree, and at each node a random subset of features are chosen to determine the splitting condition. Trees are typically much smaller in a random forest and are not pruned. 
 
