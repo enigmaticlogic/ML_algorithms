@@ -192,7 +192,7 @@ conda install -c pytorch pytorch
 <details>
   <summary>Convolutional Neural Network</summary>
   
-  ## Pcitures Please!
+  ## Pictures Please!
   The convolutional neural network is a variation of the neural network which has shown a lot of success in image recognition problems. It has a similar structure of layers which an image is passed through, but in this case the output is often used as the input for an artificial network which makes the final prediction. Instead of hidden layers, there are alternating convolution layers and pooling layers. The convolution layers involve passing small filters (e.g. 3x3) over the input of the layer (the image, or in later layers a distorted version of it). As the filter is passed over the image, each patch is convolved with the filter, and the sum of these convolutions is taken and an activation fucntion is applied. Since there are multiple filters, we end up with multiple image outputs. The values of these filters are learned in the training process, and by looking at the output images of the first layer, one can see that the learned filters often perform specific functions such as blurring, embossing, and edge detection. The pooling layers downsample the outputs of the convolutional layers to further reduce the resolution and dimension of the image. This serves to reduce the number of parameters in the network, as well as reduce overfitting. After the image is fed through the convolution and max pooling layers, it is flattened into a vector and fed into an artifical neural network.
   
   ## Required Libraries
