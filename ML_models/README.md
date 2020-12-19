@@ -210,12 +210,16 @@ conda install -c pytorch pytorch
   lr = The learning rate, a number.
   reg = The regularization constant, an integer.
   
+  For the second two lines, you can choose how many epochs to run as well as how many samples to use for the mini batch gradient descent.
   
-  Hyperparameters can be adjusted in the line below. Feel free to experiment!
+  Hyperparameters can be adjusted in the lines below. Feel free to experiment!
   
   ```
   my_NN = conv_NN(X_train_norm, y_train_ohe, hidden_nn_1=100, hidden_nn_2=100, conv_h=3, conv_w=3,\
                 pool_h=2, pool_w=2, num_filters=16, lr=0.1, reg=.000001)
+                
+  for epoch in range(3000):
+    my_NN.convolution_minibatch_fit(20)
   ```
   
 </details>
