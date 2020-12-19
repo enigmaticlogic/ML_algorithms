@@ -160,3 +160,31 @@ conda install -c pytorch pytorch
   ```
   
 </details>
+
+<details>
+  <summary>Artificial Neural Network</summary>
+  
+  ## A Revolutionary Powerhouse
+  The neural network is an infamous machine learning model that really propelled the rise of the big data era due to its extreme accuracy when large amounts of training data is available. It works by feeding a sample through a series of interconnected layers of "neurons". The input layer consists of one neuron for each feature, with values determined by the feature values. Then, each of these neurons is connected to the next layer, called a hidden layer. The value at each neuron in this hidden layer is determined in two steps. First, we take a weighted (the wieghts are trained) linear combination of the neuron values from the previous layer. Then we apply an activation function (used to add non linearity) to this linear combination and the result is the value of our neuron. In this way, each neuron is connected to all the neurons of the previous layer, and the weights determine how much each neuron in the previous layer contributes to the neurons of the current layer. This process is repeated, possibly many times for big data applications, with various numbers of neurons and activation functions at each layer. At the end of the network there is an output layer which typically consists of one neuron for each label category for classification tasks, or one neuron for regression tasks. A different activation function is used for the output layer, for example the softmax function is used for multiclass classification problems. Finally, an algorithm called backpropagation is used to update and optimize the weights. I won't go into detail here, but it essentially amounts to using the chain rule to perform gradient descent by accumulating global error one layer at a time. 
+  
+  The tricky part about neural networks is that they can be difficult to design and train, and often don't offer much of a performance boost without huge amounts of data. The number of layers, which activation function to use at each layer, and how many neurons are in each layer are all hyper parameters. To make matters more complicated, most sophisticated models involving neural networks combine them with other models, or use variations of the neural network which require even more tuning. For this reason, despite their potential predictive power, they are often not the first choise for initial exploration of data or for tasks where accuracy optimization isn't a priority.
+
+  ## Required Libraries
+  The following Python libraries are required for this program: Numpy, Pandas, and Pytorch (used for the ability to run off of GPU).
+  
+  ## Hyperparameters 
+  num_hidden_layers: The number of hidden layers in the network, an integer.
+  num_hidden_neurons: The number of neurons in each layer, a list of length num_hidden_layers (e.g. [100,150] would set the first hiden layer to have 100 neurons, and the second to have 150 neurons).
+  epoch_num: The number of times to run backpropagation, an integer. 
+  mode: Set to 'classifier' for classification tasks and 'regressor' for regression tasks.
+  reg: The regularization constant, a number.
+  lr: The learning rate, a number.
+  
+  
+  Hyperparameters can be adjusted in the line below. Feel free to experiment!
+  
+  ```
+  myNN = whole_network(2, [100, 100], 2500, X_train_norm, y_train_ohe, reg=0.1, lr=0.01)
+  ```
+  
+</details>
