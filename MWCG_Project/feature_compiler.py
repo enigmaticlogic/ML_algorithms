@@ -18,7 +18,7 @@ class atom:
         heavy_type = heavy element type of atom in one hot format, 5 choices (obtained directly from PDB)
         heavy element types are:
         ['C', 'N', 'O', 'S', 'H']
-        atom_name = name of atom, ADD MORE DETAIL TO THIS LATER (obtained directly from PDB)
+        atom_name = name of atom (obtained directly from PDB)
         rig = rigidity obtained from MWCG, 9 values
         flex = flexibility obtained from MWCG, used for CNN
         packing_density = packing density for atom (small, med, large)
