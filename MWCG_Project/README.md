@@ -65,7 +65,7 @@
 </details>
 
 <details>
-  <summary>Models Used</summary>
+  <summary>Methods and Models Used</summary>
   
   ## Prediction Methods and Metrics
   The one vs all method was used to predict the bfactors of atoms in each protein. For each protein, the atoms of all of the other 363 proteins were used as training data, and the atoms of the target protein were predicted. There were also subsets of the 364 proteins containing small, medium, and large proteins, on which predictions were made via the same method. Predictions on only the alpha carbon atoms, using the same training sets, were also made. The pearson correlation coefficient was used to measure the accuracy in this regression task. One drawback of this method is the extreme amount of time it takes (even with parallelized code, it could take hours for one prediction, and more realistically days based on the queue time for the submitted jobs). For this reason, while I was testing and tuning the models, I often split the proteins into ~10 groups instead. I used the pickle library to condense and store the features generated in feature_compiler.py, so that features did not have to be re-generated for each test of the models. These were stored in dictionaries to keep track of the protein for each sample and seperate the input for the CNN from the other features. 
