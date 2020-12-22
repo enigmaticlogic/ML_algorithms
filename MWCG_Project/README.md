@@ -9,7 +9,7 @@
   
   After feature extraction and generation is complete, a random forest, gradient boosted decision tree, and CNN model are used for regression to predict the B-factors of each atom. The leave one out method is used, where all atoms in a single protein are predicted using all atoms from the other 363 proteins. Subsets of the full dataset containing small, medium, and large proteins were also predicted, as well as predictions on only the alpha carbon atoms. The pearson correlation coefficient was used to measure accuracy, and was reported both for each protein but also averaged across the full dataset and subsets.
   
-  Due to the size of the dataset and the fact that the leave one out method was used, this project involved employing tricks such as using subsets of the data to tune the model and splitting the data into ~10 groups for cross validation instead of performing the full leave one out prediction process. Once the models were tuned and working properly, the methods in the paper were employed. I also used pickle to save outputs of the feature exctraction and prediction modules, so that I could separate the workflow into more manageable pieces. 
+  Due to the size of the dataset and the fact that the leave one out method was used, this project involved employing tricks such as using subsets of the data to tune the model and splitting the data into ~10 groups for cross validation instead of performing the full leave one out prediction process. Once the models were tuned and working properly, the methods in the paper were employed. I also used pickle to save outputs of the feature extraction and prediction modules, so that I could separate the workflow into more manageable pieces. 
   
 </details>
 
@@ -58,9 +58,9 @@
       current_atom = atom()
   ```
   
-  The readPDB method performs this check for each atom, extracts all needed features, and adds the atoms to a list. This extraction required a great amount of familiarty with the data set to deal with situations such as the occupancy condition scenario described above. To construct the global feature from the nubmer of heavy atoms, one hot encoding was used with defined cutoffs representing various size categories. After extracting the neccessary data about the atom from the PDB file, the readSTRIDE method pulls secondary features from data compiled by the STRIDE program based on the residue values of the atoms. 
+  The readPDB method performs this check for each atom, extracts all needed features, and adds the atoms to a list. This extraction required a great amount of familiarty with the data set to deal with situations such as the occupancy condition scenario described above. To construct the global feature from the number of heavy atoms, one hot encoding was used with defined cutoffs representing various size categories. After extracting the neccessary data about the atom from the PDB file, the readSTRIDE method pulls secondary features from data compiled by the STRIDE program based on the residue values of the atoms. 
   
-  Once the list of atoms has been created, it is split up by element type in the split_atoms_by_element_type method. This is done so that the rigidity indices (which are based on element pair interactions) can be computed. For each atom, this results in the creation of 9 features to be used in the RF/GBT models, as well as 3 (8,30) "image" feature inputs for the CNN model. 
+  Once the list of atoms has been created, it is split up by element type in the ```split_atoms_by_element_type``` method. This is done so that the rigidity indices (which are based on element pair interactions) can be computed. For each atom, this results in the creation of 9 features to be used in the RF/GBT models, as well as 3 (8,30) "image" feature inputs for the CNN model. 
   
 </details>
 
@@ -120,7 +120,7 @@
   These results are then pickled so that they can be averaged across relevant protein groups and displayed in pcc.py.
   
   ## Convolutional Neural Network
-  The rigidity index "image" is first normalized and used as an input for a CNN. Then the output is concatenated with the other features and used as input for a traditional neural network. This model was built using Keras with the tensorflow backend amd consists of two convolution layers followed by a dropout layer, and a dense layer, with the activation function for all layers being a leaky RELU:
+  The rigidity index "image" is first normalized and used as an input for a CNN. Then the output is concatenated with the other features and used as input for a traditional neural network. This model was built using Keras with the tensorflow backend and consists of two convolution layers followed by a dropout layer, and a dense layer, with the activation function for all layers being a leaky RELU:
   
   ```
   CNN_in = Input(shape = (8, 30, 3))
