@@ -1,7 +1,7 @@
 # Intro
 Below is a a very brief overview of some projects I have worked on. Detailed documentation is included for ML_models and MWCG_project within their respective folders. The flavor of the other projects is similar to that of the MWCG project.
 
-# Projects
+# Project Descriptions
 ML_models: Various ML algorithms coded from scratch in Python. These scripts are runnable as is, and the relavant data set CSV's are included.
 
 PDF's of all research papers are included.
